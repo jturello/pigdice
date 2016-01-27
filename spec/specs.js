@@ -3,6 +3,12 @@ describe('Player', function() {
     var testPlayer = new Player("Bill");
     expect(testPlayer.name).to.equal("Bill");
   });
+
+  // it("sets scores for player1 and player2 to zero", function() {
+  //   var testPlayer = new Player("Bill");
+  //   expect(testPlayer.score).to.equal(0);
+  // });
+
 });
 
 
@@ -16,14 +22,19 @@ describe('Game', function() {
   });
 
   it("sets player1 as the active player", function() {
-    new Game("Bill", "Tom");
-    expect(Game.activePlayer).to.equal(Game.player1);
+    var player1 = new Player("Bill");
+    var player2 = new Player("Tom");
+    var game = new Game(player1, player2);
+    expect(game.activePlayer).to.equal(player1);
+    expect(game.player1.name).to.equal("Bill");
   });
 
   it("sets scores for player1 and player2 to zero", function() {
-    new Game("Bill", "Tom");
-    expect(player1.score).to.equal(0);
-    expect(player2.score).to.equal(0);
+    var player1 = new Player("Bill");
+    var player2 = new Player("Tom");
+    var game = new Game(player1, player2);
+    expect(game.player1.score).to.equal(0);
+    expect(game.player2.score).to.equal(0);
   });
 
 });

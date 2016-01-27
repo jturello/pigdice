@@ -1,10 +1,14 @@
 function Player(name) {
   this.name = name;
+  this.score = 0;
 }
+
+
 
 
 function Game(player1, player2) {
   this.player1 = player1;
   this.player2 = player2;
-  var activePlayer = this.player1;
+  this.activePlayer = player1;
+
 }
