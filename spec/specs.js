@@ -43,6 +43,20 @@ describe('Game', function() {
     var player2 = new Player("Tom");
     var testGame = new Game(player1, player2);
     expect(testGame.activePlayerScore).to.equal(0);
+  });
+
+  it("sets activePlayerScore to zero", function() {
+      var player1 = new Player("Bill");
+      var player2 = new Player("Tom");
+      var testGame = new Game(player1, player2);
+      expect(testGame.activePlayerScore).to.equal(0);
+    });
+
+  it("rolls the die and displays a random number 1 through 6", function() {
+    var player1 = new Player("Bill");
+    var player2 = new Player("Tom");
+    var testGame = new Game(player1, player2);
+    expect(testGame.dieRoll()).to.be.within(1, 6);
 
   });
 
