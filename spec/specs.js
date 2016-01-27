@@ -52,12 +52,43 @@ describe('Game', function() {
       expect(testGame.activePlayerScore).to.equal(0);
     });
 
+  // it("increments activePlayerScore by the amount rolled", function() {
+  //   var player1 = new Player("Bill");
+  //   var player2 = new Player("Tom");
+  //   var testGame = new Game(player1, player2);
+  //   expect(testGame.incrementActivePlayerScore).to.equal((testGame.incrementActivePlayerScore + testGame.dieRoll()));
+  //
+  // });
+
+});
+
+describe('dieRoll', function() {
   it("rolls the die and displays a random number 1 through 6", function() {
     var player1 = new Player("Bill");
     var player2 = new Player("Tom");
     var testGame = new Game(player1, player2);
     expect(testGame.dieRoll()).to.be.within(1, 6);
+  });
 
+  it("increments activePlayerScore by the amount rolled", function() {
+    var player1 = new Player("Bill");
+    var player2 = new Player("Tom");
+    var testGame = new Game(player1, player2);
+    expect(testGame.dieRoll()).to.equal(testGame.dieRollResult);
+  });
+
+  it("increments activePlayerScore by the amount rolled", function() {
+    var player1 = new Player("Bill");
+    var player2 = new Player("Tom");
+    var testGame = new Game(player1, player2);
+    testGame.dieRoll();
+    testGame.dieRoll();
+    testGame.dieRoll();
+    testGame.dieRoll();
+    testGame.dieRoll();
+    testGame.dieRoll();
+    testGame.dieRoll();
+    expect(testGame.activePlayerScore).to.above(6);
   });
 
 });
