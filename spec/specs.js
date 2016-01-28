@@ -3,15 +3,7 @@ describe('Player', function() {
     var testPlayer = new Player("Bill");
     expect(testPlayer.name).to.equal("Bill");
   });
-
-  // it("sets scores for player1 and player2 to zero", function() {
-  //   var testPlayer = new Player("Bill");
-  //   expect(testPlayer.score).to.equal(0);
-  // });
-
 });
-
-
 
 describe('Game', function() {
   it("creates player 1 and player 2", function() {
@@ -44,8 +36,8 @@ describe('Game', function() {
     var testGame = new Game(player1, player2);
     expect(testGame.activePlayerScore).to.equal(0);
   });
-
 });
+
 
 describe('dieRoll', function() {
   it("rolls the die and displays a random number 1 through 6", function() {
@@ -75,6 +67,24 @@ describe('dieRoll', function() {
     testGame.dieRoll();
     expect(testGame.activePlayerScore).to.above(6);
   });
+
+  it("will toggle player when one is rolled", function() {
+    var player1 = new Player("Bill");
+    var player2 = new Player("Tom");
+    var testGame = new Game(player1, player2);
+    //testGame.dieRollResult = 1;
+    testGame.dieRoll();
+    expect(testGame.activePlayer).to.equal(testGame.player2);;
+  });
+
+  it("set activePlayerScore to zero when one is rolled", function() {
+    var player1 = new Player("Bill");
+    var player2 = new Player("Tom");
+    var testGame = new Game(player1, player2);
+    expect(testGame.activePlayerScore).to.equal(0);
+  });
+
+
 });
 
 
@@ -89,25 +99,27 @@ describe('hold', function() {
     expect(testGame.activePlayer).to.equal(testGame.player2);
   });
 
-    it("will add activePlayerScore value to individual player's score value", function() {
-      var player1 = new Player("Bill");
-      var player2 = new Player("Tom");
-      var testGame = new Game(player1, player2);
-      var turnScore = 0;
-      testGame.dieRoll();
-      testGame.dieRoll();
-      var activeScore = testGame.activePlayerScore;
-      testGame.hold()
-      expect(player1.score).to.equal(activeScore);
-    });
+  it("will add activePlayerScore value to individual player's score value", function() {
+    var player1 = new Player("Bill");
+    var player2 = new Player("Tom");
+    var testGame = new Game(player1, player2);
+    var turnScore = 0;
+    testGame.dieRoll();
+    testGame.dieRoll();
+    var activeScore = testGame.activePlayerScore;
+    testGame.hold()
+    expect(player1.score).to.equal(activeScore);
+  });
 
-    it("will toggle activePlayer when hold is selected", function() {
-      var player1 = new Player("Bill");
-      var player2 = new Player("Tom");
-      var testGame = new Game(player1, player2);
-      testGame.dieRoll();
-      testGame.dieRoll();
-      testGame.hold()
-      expect(testGame.activePlayer).to.equal(testGame.player2);
-    });
+  it("re-initializes activePlayerScore to 0 for the next player's turn", function() {
+    var player1 = new Player("Bill");
+    var player2 = new Player("Tom");
+    var testGame = new Game(player1, player2);
+    testGame.dieRoll();
+    testGame.dieRoll();
+    testGame.hold()
+    expect(testGame.activePlayerScore).to.equal(0);
+  });
+
+
 });
