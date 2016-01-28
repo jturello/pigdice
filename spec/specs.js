@@ -89,14 +89,25 @@ describe('hold', function() {
     expect(testGame.activePlayer).to.equal(testGame.player2);
   });
 
-    it("will add activePlayerScore value individual score value", function() {
+    it("will add activePlayerScore value to individual player's score value", function() {
+      var player1 = new Player("Bill");
+      var player2 = new Player("Tom");
+      var testGame = new Game(player1, player2);
+      var turnScore = 0;
+      testGame.dieRoll();
+      testGame.dieRoll();
+      var activeScore = testGame.activePlayerScore;
+      testGame.hold()
+      expect(player1.score).to.equal(activeScore);
+    });
+
+    it("will toggle activePlayer when hold is selected", function() {
       var player1 = new Player("Bill");
       var player2 = new Player("Tom");
       var testGame = new Game(player1, player2);
       testGame.dieRoll();
       testGame.dieRoll();
       testGame.hold()
-      expect().to.equal(testGame.player2);
+      expect(testGame.activePlayer).to.equal(testGame.player2);
     });
-
 });
