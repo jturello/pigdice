@@ -49,3 +49,18 @@ function Game(player1, player2) {
     this.activePlayerScore = 0;
 
   };
+
+$(document).ready(function() {
+  $("#startGame").click(function(event) {
+    var player1 = $("input#player1").val();
+    var player2 = $("input#player2").val();
+        // $("input#btn1").attr("value", "70");
+    // console.log(player2);
+    $("div#landing-page").hide();
+    $("div#game-play").show();
+
+      // $("ul#player2namelabel").append("<li>Please insert yourself!</li>");
+
+      event.preventDefault();
+    });
+  });

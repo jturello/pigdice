@@ -9,48 +9,112 @@
     <title>Pig Dice Landing Page</title>
   </head>
   <body>
-    <div class="container">
-      <div class="jumbotron">
-        <h1>Pig Dice - The Game of the Century!!</h1>
-      </br>
+
+    <div id="landing-page">
+      <div class="container">
+        <div class="jumbotron">
+          <h1>Pig Dice - The Game of the Century!!</h1>
+        </br>
+          <h4>
+            Pig is a simple dice game first described in print by John Scarne in 1945. As with many games of folk origin, Pig is played with many rule variations. Commercial variants of Pig include Pass the Pigs, Pig Dice, and Skunk. Pig is commonly used by mathematics teachers to teach probability concepts.
+          </h4>
+        </div>
         <h4>
-          Pig is a simple dice game first described in print by John Scarne in 1945. As with many games of folk origin, Pig is played with many rule variations. Commercial variants of Pig include Pass the Pigs, Pig Dice, and Skunk. Pig is commonly used by mathematics teachers to teach probability concepts.
+          Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold":
+          <ul>
+            <li>If the player rolls a 1, they score nothing and it becomes the next player's turn.</li>
+            <li>If the player rolls any other number, it is added to their turn total and the player's turn continues.</li>
+            <li>If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.</li>
+          </ul>
+
+          The first player to score 100 or more points wins.
+
+          For example, the first player, Ann, begins a turn with a roll of 5. Ann could hold and score 5 points, but chooses to roll again. Ann rolls a 2, and could hold with a turn total of 7 points, but chooses to roll again. Ann rolls a 1, and must end her turn without scoring. The next player, Bob, rolls the sequence 4-5-3-5-5, after which he chooses to hold, and adds his turn total of 22 points to his score.
         </h4>
+        <br>
+        <h2>Enter your name:</h2>
+        <form>
+          <div class="row" id="playerRow">
+            <div class="col-sm-6">
+              <label for="player1">Player 1</label>
+              <input type="text" class="form-control" id="player1" >
+            </div>
+            <div class="col-sm-6">
+              <label for="player2">Player 2</label>
+              <input type="text" class="form-control" id="player2" >
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+              <button type="submit" class="btn btn-success btn-lg btn-block" id="startGame">Start Game</button>
+            </div>
+            <div class="col-sm-4"></div>
+          </div>
+        </form>
       </div>
-      <h4>
-        Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold":
-        <ul>
-          <li>If the player rolls a 1, they score nothing and it becomes the next player's turn.</li>
-          <li>If the player rolls any other number, it is added to their turn total and the player's turn continues.</li>
-          <li>If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.</li>
-        </ul>
+    </div> <!-- END LANDING-PAGE DIV -->
 
-        The first player to score 100 or more points wins.
+    <div id="game-play">
 
-        For example, the first player, Ann, begins a turn with a roll of 5. Ann could hold and score 5 points, but chooses to roll again. Ann rolls a 2, and could hold with a turn total of 7 points, but chooses to roll again. Ann rolls a 1, and must end her turn without scoring. The next player, Bob, rolls the sequence 4-5-3-5-5, after which he chooses to hold, and adds his turn total of 22 points to his score.
-      </h4>
-      <br>
-      <h2>Enter your name:</h2>
-      <form>
-        <div class="row" id="playerRow">
-          <div class="col-sm-6">
-            <label for="player1">Player 1</label>
-            <input type="text" class="form-control" id="player1" >
-          </div>
-          <div class="col-sm-6">
-            <label for="player2">Player 2</label>
-            <input type="text" class="form-control" id="player2" >
-          </div>
+      <div class="container">
+        <div class="page-header">
         </div>
         <div class="row">
-          <div class="col-sm-4"></div>
-          <div class="col-sm-4">
-            <button type="submit" class="btn btn-success btn-lg btn-block" id="startGame">Start Game</button>
+          <div class="col-sm-1"></div>
+          <div class="col-sm-5">
+            <h2>Player 1: <label></label></h2>
           </div>
-          <div class="col-sm-4"></div>
+          <div class="col-sm-5">
+            <ul id="player2namelabel">
+              <li><h2>Player 2:</h2></li>
+            </ul>
+          </div>
+          <div class="col-sm-1"></div>
         </div>
-      </form>
-    </div>
+        <div class="row">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-5">
+            <h3>Score: 22</h3>
+          </div>
+          <div class="col-sm-5">
+            <h3>Score: 14</h3>
+          </div>
+          <div class="col-sm-1"></div>
+        </div> <!-- end row 2 scores div -->
+        <div class="row roll-die-active-score-labels" id="die-roll-label">
+          <div class="col-sm-4"></div>
+          <div class="col-sm-3">
+            <h4>Current Dice Roll:</h4>
+          </div>
+          <div class="col-sm-1" id="roll-die-row">
+            <input class="btn btn-lg btn-block roll-die-active-score-btn" id="btn1" type="button" value="4">
+          </div>
+        </div> <!-- end active-score-btn-row div -->
 
+        <div class="row roll-die-active-score-labels">
+          <div class="col-sm-4"></div>
+          <div class="col-sm-3">
+            <h4>Active Player Score:</h4>
+          </div>
+          <div class="col-sm-1" > <!-- id="active-score-display-row" -->
+            <input class="btn btn-lg btn-block roll-die-active-score-btn" type="button" value="14">
+          </div>
+        </div> <!-- end active-score-btn-row div -->
+        <div class="row" id="roll-die-hold-btn-row">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-4">
+            <input class="btn btn-lg btn-block rollDie-hold-btn" id=rollDie type="button" value="Roll Die">
+          </div>
+          <div class="col-sm-4">
+            <input class="btn btn-lg btn-block rollDie-hold-btn" id=hold type="button" value="Hold">
+          </div>
+          <div class="col-sm-2"></div>
+
+        </div>  <!-- end roll-die-hold-btn-row div -->
+
+      </div> <!-- end container div -->
+
+    </div> <!-- END GAME-PLAY DIV -->
   </body>
 </html>

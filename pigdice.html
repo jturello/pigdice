@@ -15,10 +15,13 @@
       <div class="row">
         <div class="col-sm-1"></div>
         <div class="col-sm-5">
-          <h2>Player 1: Bill</h2>
+          <h2>Player 1: <label></label></h2>
         </div>
         <div class="col-sm-5">
-          <h2>Player 2: Tom</h2>
+          <ul id="player2namelabel">
+            <li><h2>Player 2:</h2></li>
+          </ul>
+          <!-- <span id="player2namelabel"><h2>Player 2:</h2></span> -->
         </div>
         <div class="col-sm-1"></div>
       </div>
@@ -38,7 +41,7 @@
           <h4>Current Dice Roll:</h4>
         </div>
         <div class="col-sm-1" id="roll-die-row">
-          <input class="btn btn-lg btn-block roll-die-active-score-btn" type="button" value="4">
+          <input class="btn btn-lg btn-block roll-die-active-score-btn" id="btn1" type="button" value="4">
         </div>
       </div> <!-- end active-score-btn-row div -->
 
@@ -54,10 +57,10 @@
       <div class="row" id="roll-die-hold-btn-row">
         <div class="col-sm-2"></div>
         <div class="col-sm-4">
-          <input class="btn btn-lg btn-block rollDie-hold-btn" type="button" value="Roll Die">
+          <input class="btn btn-lg btn-block rollDie-hold-btn" id=rollDie type="button" value="Roll Die">
         </div>
         <div class="col-sm-4">
-          <input class="btn btn-lg btn-block rollDie-hold-btn" type="button" value="Hold">
+          <input class="btn btn-lg btn-block rollDie-hold-btn" id=hold type="button" value="Hold">
         </div>
         <div class="col-sm-2"></div>
 

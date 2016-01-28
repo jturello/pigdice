@@ -45,3 +45,11 @@
 #playerRow {
   margin-top: 25px;
 }
+
+ul#player2namelabel {
+  list-style-type: none;
+}
+
+#game-play {
+  display: none;
+}
