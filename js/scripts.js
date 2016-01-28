@@ -15,4 +15,13 @@ function Game(player1, player2) {
     var result =  Math.floor( Math.random() * 6 ) + 1;
     this.activePlayerScore += result;
     return this.dieRollResult = result;
-  }
+}
+
+  Game.prototype.hold = function() {
+    if (this.activePlayer === this.player1) {
+      this.activePlayer = this.player2;
+    }
+    else {
+      this.activePlayer = this.player1;
+    }
+  };

@@ -38,27 +38,12 @@ describe('Game', function() {
     expect(game.player2.score).to.equal(0);
   });
 
-  it("sets activePlayerScore to zero", function() {
+  it("initializes activePlayerScore to zero", function() {
     var player1 = new Player("Bill");
     var player2 = new Player("Tom");
     var testGame = new Game(player1, player2);
     expect(testGame.activePlayerScore).to.equal(0);
   });
-
-  it("sets activePlayerScore to zero", function() {
-      var player1 = new Player("Bill");
-      var player2 = new Player("Tom");
-      var testGame = new Game(player1, player2);
-      expect(testGame.activePlayerScore).to.equal(0);
-    });
-
-  // it("increments activePlayerScore by the amount rolled", function() {
-  //   var player1 = new Player("Bill");
-  //   var player2 = new Player("Tom");
-  //   var testGame = new Game(player1, player2);
-  //   expect(testGame.incrementActivePlayerScore).to.equal((testGame.incrementActivePlayerScore + testGame.dieRoll()));
-  //
-  // });
 
 });
 
@@ -70,7 +55,7 @@ describe('dieRoll', function() {
     expect(testGame.dieRoll()).to.be.within(1, 6);
   });
 
-  it("increments activePlayerScore by the amount rolled", function() {
+  it("shows that dieRollResult will equal each dieRoll", function() {
     var player1 = new Player("Bill");
     var player2 = new Player("Tom");
     var testGame = new Game(player1, player2);
@@ -90,5 +75,28 @@ describe('dieRoll', function() {
     testGame.dieRoll();
     expect(testGame.activePlayerScore).to.above(6);
   });
+});
+
+
+describe('hold', function() {
+  it("will toggle activePlayer when hold is selected", function() {
+    var player1 = new Player("Bill");
+    var player2 = new Player("Tom");
+    var testGame = new Game(player1, player2);
+    testGame.dieRoll();
+    testGame.dieRoll();
+    testGame.hold()
+    expect(testGame.activePlayer).to.equal(testGame.player2);
+  });
+
+    it("will add activePlayerScore value individual score value", function() {
+      var player1 = new Player("Bill");
+      var player2 = new Player("Tom");
+      var testGame = new Game(player1, player2);
+      testGame.dieRoll();
+      testGame.dieRoll();
+      testGame.hold()
+      expect().to.equal(testGame.player2);
+    });
 
 });
