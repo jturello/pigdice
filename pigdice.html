@@ -9,25 +9,61 @@
     <title>Pig Dice</title>
   </head>
   <body>
-    <div class="container-fluid">
+    <div class="container">
       <div class="page-header">
-
       </div>
       <div class="row">
-        <div class="col-sm-6">
-          <h3>Player 1</h3>
-
+        <div class="col-sm-1"></div>
+        <div class="col-sm-5">
+          <h2>Player 1: Bill</h2>
         </div>
-        <div class="col-sm-6">
-          <h3>Player 2</h3>
-
+        <div class="col-sm-5">
+          <h2>Player 2: Tom</h2>
         </div>
-
+        <div class="col-sm-1"></div>
       </div>
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-5">
+          <h3>Score: 22</h3>
+        </div>
+        <div class="col-sm-5">
+          <h3>Score: 14</h3>
+        </div>
+        <div class="col-sm-1"></div>
+      </div> <!-- end row 2 scores div -->
+      <div class="row roll-die-active-score-labels" id="die-roll-label">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-3">
+          <h4>Current Dice Roll:</h4>
+        </div>
+        <div class="col-sm-1" id="roll-die-row">
+          <input class="btn btn-lg btn-block roll-die-active-score-btn" type="button" value="4">
+        </div>
+      </div> <!-- end active-score-btn-row div -->
 
+      <div class="row roll-die-active-score-labels">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-3">
+          <h4>Active Player Score:</h4>
+        </div>
+        <div class="col-sm-1" > <!-- id="active-score-display-row" -->
+          <input class="btn btn-lg btn-block roll-die-active-score-btn" type="button" value="14">
+        </div>
+      </div> <!-- end active-score-btn-row div -->
+      <div class="row" id="roll-die-hold-btn-row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+          <input class="btn btn-lg btn-block rollDie-hold-btn" type="button" value="Roll Die">
+        </div>
+        <div class="col-sm-4">
+          <input class="btn btn-lg btn-block rollDie-hold-btn" type="button" value="Hold">
+        </div>
+        <div class="col-sm-2"></div>
 
+      </div>  <!-- end roll-die-hold-btn-row div -->
 
-    </div>
+    </div> <!-- end container div -->
 
   </body>
 </html>

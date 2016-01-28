@@ -30,8 +30,26 @@
         For example, the first player, Ann, begins a turn with a roll of 5. Ann could hold and score 5 points, but chooses to roll again. Ann rolls a 2, and could hold with a turn total of 7 points, but chooses to roll again. Ann rolls a 1, and must end her turn without scoring. The next player, Bob, rolls the sequence 4-5-3-5-5, after which he chooses to hold, and adds his turn total of 22 points to his score.
       </h4>
       <br>
-
-
+      <h2>Enter your name:</h2>
+      <form>
+        <div class="row" id="playerRow">
+          <div class="col-sm-6">
+            <label for="player1">Player 1</label>
+            <input type="text" class="form-control" id="player1" >
+          </div>
+          <div class="col-sm-6">
+            <label for="player2">Player 2</label>
+            <input type="text" class="form-control" id="player2" >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4"></div>
+          <div class="col-sm-4">
+            <button type="submit" class="btn btn-success btn-lg btn-block" id="startGame">Start Game</button>
+          </div>
+          <div class="col-sm-4"></div>
+        </div>
+      </form>
     </div>
 
   </body>

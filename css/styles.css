@@ -1,4 +1,4 @@
-.container h3 {
+.container h3,h2 {
   text-align: center;
 }
 
@@ -8,4 +8,40 @@
 
 .jumbotron h4 {
   text-align: justify;
+}
+
+.rollDie-hold-btn {
+  margin-top: 50px;
+  color: bisque;
+  font-size: 20px;
+  background-color: seagreen;
+}
+
+#die-roll-label {
+  margin-top: 35px;
+}
+
+.roll-die-active-score-labels {
+  display:flex;
+  margin-top: 5px;
+  text-align: right;
+}
+
+#roll-die-hold-btn-row {
+  display: flex;
+}
+
+.roll-die-active-score-btn {
+  border: 1px solid black;
+  background-color: bisque;
+  color: darkblue;
+  font-weight: bold;
+}
+
+#startGame {
+  margin-top: 50px;
+}
+
+#playerRow {
+  margin-top: 25px;
 }
