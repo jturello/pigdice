@@ -52,15 +52,23 @@ function Game(player1, player2) {
 
 $(document).ready(function() {
   $("#startGame").click(function(event) {
-    var player1 = $("input#player1").val();
-    var player2 = $("input#player2").val();
-        // $("input#btn1").attr("value", "70");
-    // console.log(player2);
+    event.preventDefault();
+    var player1 = new Player($("input#player1").val());
+    var player2 = new Player($("input#player2").val());
     $("div#landing-page").hide();
     $("div#game-play").show();
-
-      // $("ul#player2namelabel").append("<li>Please insert yourself!</li>");
-
-      event.preventDefault();
-    });
   });
+
+$("#rollDie").click(function(event) {
+      event.preventDefault();
+      console.log("in rollDie click function");
+      // $("button#btn1").text(dieRollResult.toString());
+
+  });
+
+  $("#hold").on("click", function(event) {
+    event.preventDefault();
+    console.log("in hold click function");
+  });
+
+});

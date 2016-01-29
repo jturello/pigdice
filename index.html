@@ -58,8 +58,7 @@
     <div id="game-play">
 
       <div class="container">
-        <div class="page-header">
-        </div>
+        <div class="page-header"></div>
         <div class="row">
           <div class="col-sm-1"></div>
           <div class="col-sm-5">
@@ -75,10 +74,10 @@
         <div class="row">
           <div class="col-sm-1"></div>
           <div class="col-sm-5">
-            <h3>Score: 22</h3>
+            <h3><span id="score1">Score:</span></h3>
           </div>
           <div class="col-sm-5">
-            <h3>Score: 14</h3>
+            <h3><span id="score2">Score:</span></h3>
           </div>
           <div class="col-sm-1"></div>
         </div> <!-- end row 2 scores div -->
@@ -88,7 +87,7 @@
             <h4>Current Dice Roll:</h4>
           </div>
           <div class="col-sm-1" id="roll-die-row">
-            <input class="btn btn-lg btn-block roll-die-active-score-btn" id="btn1" type="button" value="4">
+            <button class="btn btn-lg btn-block roll-die-active-score-btn" id="diceRoleDisplay" type="button"></button>
           </div>
         </div> <!-- end active-score-btn-row div -->
 
@@ -98,7 +97,8 @@
             <h4>Active Player Score:</h4>
           </div>
           <div class="col-sm-1" > <!-- id="active-score-display-row" -->
-            <input class="btn btn-lg btn-block roll-die-active-score-btn" type="button" value="14">
+            <button class="btn btn-lg btn-block roll-die-active-score-btn" id="activePlayerScoreDisplay" type="button"></button>
+            <!-- <button class="btn btn-lg btn-block roll-die-active-score-btn" type="button"></button> -->
           </div>
         </div> <!-- end active-score-btn-row div -->
         <div class="row" id="roll-die-hold-btn-row">
