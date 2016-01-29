@@ -55,14 +55,23 @@ $(document).ready(function() {
     event.preventDefault();
     var player1 = new Player($("input#player1").val());
     var player2 = new Player($("input#player2").val());
+    var game = new Game(player1, player2);
     $("div#landing-page").hide();
     $("div#game-play").show();
+
+    console.log("in startgame click")
+    console.log(game.player1.name);
+    sessionStorage.setItem('player1.name', game.player1.name);
+
+    // $("ul#player2namelabel").append("<li>" + game.player1.name + "</li>");
+
   });
 
 $("#rollDie").click(function(event) {
       event.preventDefault();
       console.log("in rollDie click function");
-      // $("button#btn1").text(dieRollResult.toString());
+      console.log(sessionStorage.getItem('player1.name'));
+      $("button#btn1").text(sessionStorage.getItem('player1.name'));
 
   });
 

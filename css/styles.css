@@ -21,9 +21,9 @@
   margin-top: 35px;
 }
 
-.roll-die-active-score-btn {
+/*.roll-die-active-score-btns {
   display: flex;
-}
+}*/
 
 .roll-die-active-score-labels {
   display:flex;
@@ -35,11 +35,13 @@
   display: flex;
 }
 
-.roll-die-active-score-btn {
+.roll-die-active-score-btns {
   border: 1px solid black;
   background-color: bisque;
   color: darkblue;
   font-weight: bold;
+  display; flex;
+  min-height: 100%;
 }
 
 #startGame {
@@ -50,9 +52,11 @@
   margin-top: 25px;
 }
 
-ul#player2namelabel {
+ul#player2namelabel li {
   list-style-type: none;
+  display: inline;
 }
+
 
 #game-play {
   display: none;
